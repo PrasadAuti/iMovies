@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content">
+
+          <!-- ***** Banner Start ***** -->
+          <div class="main-banner">
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="header-text">
+                  <h6>Welcome To iMovies</h6>
+                  <h4><em>Stream</em> Our Popular Movies & Read News</h4>
+                  <div class="main-button">
+                    <a href="/news" style="background-color:#ec6090;">Browse News</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Banner End ***** -->
+
+          <!-- ***** Most Popular Start ***** -->
+          <div class="most-popular">
+            <div class="row">
+              <div class="col-lg-12">
+
+                <div class="col-lg-12">
+                  <div class="heading-section">
+                    <h4><em>Recommended</em> Movies</h4>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                      <div class="item">
+                        <a href="/movie/{{rtitle1}}"><img src="{{rimg1}}" alt=""></a>
+                        <h4>{{rtitle1}}<br> </h4>
+                        <ul>
+                          <li><i class="fa fa-star"></i></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                      <div class="item">
+                        <a href="/movie/{{rtitle2}}"><img src="{{rimg2}}" alt=""></a>
+                        <h4>{{rtitle2}}<br></h4>
+                        <ul>
+                          <li><i class="fa fa-star"></i> </li> 
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                      <div class="item">
+                        <a href="/movie/{{rtitle3}}"><img src="{{rimg3}}" alt=""></a>
+                        <h4>{{rtitle3}}<br></h4>
+                        <ul>
+                          <li><i class="fa fa-star"></i></li> 
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                      <div class="item">
+                        <a href="/movie/{{rtitle4}}"><img src="{{rimg4}}" alt=""></a>
+                        <h4>{{rtitle4}}<br></h4>
+                        <ul>
+                          <li><i class="fa fa-star"></i></li> 
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-12">
+                  <div class="heading-section">
+                    <h4><em>Top</em> Movies</h4>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                      <div class="item">
+                        <a href="/movie/{{title01}}"><img src="{{img01}}" alt=""></a>
+                        <h4>{{title01}}<br> </h4>
+                        <ul>
+                          <li><i class="fa fa-star"></i>{{vote01}}</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                      <div class="item">
+                        <a href="/movie/{{title02}}"><img src="{{img02}}" alt=""></a>
+                        <h4>{{title02}}<br></h4>
+                        <ul>
+                          <li><i class="fa fa-star"></i> {{vote02}}</li> 
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                      <div class="item">
+                        <a href="/movie/{{title03}}"><img src="{{img03}}" alt=""></a>
+                        <h4>{{title03}}<br></h4>
+                        <ul>
+                          <li><i class="fa fa-star"></i>{{vote03}}</li> 
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                      <div class="item">
+                        <a href="/movie/{{title04}}"><img src="{{img04}}" alt=""></a>
+                        <h4>{{title04}}<br></h4>
+                        <ul>
+                          <li><i class="fa fa-star"></i>{{vote04}}</li> 
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="heading-section">
+                  <h4><em>MCU</em> Movies</h4>
+                </div>
+                <div class="row">
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                      <a href="/movie/{{title1}}"><img src="{{img1}}" alt=""></a>
+                      <h4>{{title1}}<br> </h4>
+                      <ul>
+                        <li><i class="fa fa-star"></i>{{vote1}}</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                      <a href="/movie/{{title2}}"><img src="{{img2}}" alt=""></a>
+                      <h4>{{title2}}<br></h4>
+                      <ul>
+                        <li><i class="fa fa-star"></i> {{vote2}}</li> 
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                      <a href="/movie/{{title3}}"><img src="{{img3}}" alt=""></a>
+                      <h4>{{title3}}<br></h4>
+                      <ul>
+                        <li><i class="fa fa-star"></i>{{vote3}}</li> 
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                      <a href="/movie/{{title4}}"><img src="{{img4}}" alt=""></a>
+                      <h4>{{title4}}<br></h4>
+                      <ul>
+                        <li><i class="fa fa-star"></i>{{vote4}}</li> 
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-lg-12">
+                <div class="heading-section">
+                  <h4><em>DC</em> Movies</h4>
+                </div>
+                <div class="row">
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                      <a href="/movie/{{title5}}"><img src="{{img5}}" alt=""></a>
+                      <h4>{{title5}}<br> </h4>
+                      <ul>
+                        <li><i class="fa fa-star"></i>{{vote5}}</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                      <a href="/movie/{{title6}}"><img src="{{img6}}" alt=""></a>
+                      <h4>{{title6}}<br></h4>
+                      <ul>
+                        <li><i class="fa fa-star"></i> {{vote6}}</li> 
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                      <a href="/movie/{{title7}}"><img src="{{img7}}" alt=""></a>
+                      <h4>{{title7}}<br></h4>
+                      <ul>
+                        <li><i class="fa fa-star"></i>{{vote7}}</li> 
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                      <a href="/movie/{{title8}}"><img src="{{img8}}" alt=""></a>
+                      <h4>{{title8}}<br></h4>
+                      <ul>
+                        <li><i class="fa fa-star"></i>{{vote8}}</li> 
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              </div>
+            </div>
+          </div>
+          <!-- ***** Most Popular End ***** -->
+        </div>
+      </div>
+    </div>
+  </div> 
+
+{% endblock body %}

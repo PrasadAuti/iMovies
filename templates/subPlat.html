@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="icon" type="image/x-icon" href="static/assets/images/profile-header.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body{
+      background: #f6f5f7;
+    }
+ .wrapper {
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 margin: -190px 0 0 -468px;
+	 font-family: 'Open Sans', sans-serif;
+	 font-weight: 400;
+	 color: #9f9f9f;
+	 font-size: 15px;
+}
+ .package {
+	 box-sizing: border-box;
+   background-color: #ffffff;
+	 width: 301px;
+	 height: 380px;
+	 border: 3px solid #e8e8e8;
+	 border-radius: 7px;
+	 display: inline-block;
+	 padding: 24px;
+	 text-align: center;
+	 float: left;
+	 transition: margin-top 0.5s linear;
+	 position: relative;
+	 margin-right: 11px;
+}
+ .package:hover {
+	 margin-top: -30px;
+	 transition: margin-top 0.3s linear;
+   border-radius: 10px;
+   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+   0 10px 10px rgba(0, 0, 0, 0.22);
+}
+ .name {
+	 color: #565656;
+	 font-weight: 300;
+	 font-size: 3rem;
+	 margin-top: -5px;
+}
+ .price {
+	 margin-top: 7px;
+	 font-weight: bold;
+}
+ .price::after {
+	 content: " / per user";
+	 font-weight: normal;
+}
+ hr {
+	 background-color: #dedede;
+	 border: none;
+	 height: 1px;
+}
+ .trial {
+	 font-size: 0.9rem;
+	 font-weight: 600;
+	 padding: 2px 21px 2px 21px;
+	 color: #e75e8d;
+	 border: 1px solid #e4e4e4;
+	 display: inline-block;
+	 border-radius: 15px;
+	 background-color: white;
+	 position: relative;
+	 bottom: -20px;
+}
+ ul {
+	 list-style: none;
+	 padding: 0;
+	 text-align: left;
+	 margin-top: 29px;
+}
+ li {
+	 margin-bottom: 15px;
+}
+ li:before {
+	 font-size: 1.3rem;
+	 color: #e75e8d;
+	 margin-right: 3px;
+}
+ .checkIcon, li:before, .brilliant::after {
+	 font-family: "FontAwesome";
+	 content: "\f00c";
+}
+ .brilliant {
+	 border-color: #e75e8d;
+}
+ .brilliant::before {
+	 width: 0;
+	 height: 0;
+	 border-style: solid;
+	 border-width: 64px 64px 0 0;
+	 border-color: #e75e8d transparent transparent transparent;
+	 position: absolute;
+	 left: 0;
+	 top: 0;
+	 content: "";
+}
+ .brilliant::after {
+	 color: white;
+	 position: absolute;
+	 left: 9px;
+	 top: 6px;
+	 text-shadow: 0 0 2px #37c5b6;
+	 font-size: 1.4rem;
+}
+.center {
+  position: absolute;
+	top: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
+
+.button-24 {
+  background: #e75e8d;
+  border: 1px solid #e75e8d;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #e75e8d;
+}
+
+.button-24:active {
+  opacity: .5;
+}
+    </style>
+</head>
+<body>
+  <div class="text-center">
+    <center> 
+    {% if messages %}
+                
+                        {% for message in messages %}
+                        <div class="alert alert-info">
+                           <h2 style="color:#e75e8d;"> {{ message }} </h2>
+                        </div>
+                        {% endfor %}
+                  
+                    {% endif %}
+                      </center> 
+  </div>
+  <div class="container">
+    <div class="wrapper">
+      <a href="/subSilver">
+        <div class="package">
+          <div class="name">Silver</div>
+          <div class="price"><i class="fa fa-rupee" style="font-size:18px;color:#e75e8d"></i> 399</div>
+          <div class="trial">Available for 1 month</div>
+          <hr />
+          <ul>
+            <li>
+              <strong>HD (720p)</strong>
+              Max video quality
+            </li>
+            <li>
+              <strong>Stereo</strong>
+              Max audio quality
+            </li>
+          </ul>
+        </div>
+      </a>
+        <a href="/subGold">
+        <div class="package">
+          <div class="name">Gold</div>
+          <div class="price"><i class="fa fa-rupee" style="font-size:18px;color:#e75e8d"></i> 999</div>
+          <div class="trial">Available for 6 month</div>
+          <hr />
+          <ul>
+            <li>
+              <strong>Ads free </strong>
+              movies and shows 
+            </li>
+            <li>
+              <strong>Full HD (1080p)</strong>
+              Max video quality
+            </li>
+            <li>
+              <strong>Dolby 5.1</strong>
+              Max audio quality
+            </li>
+          </ul>
+        </div>
+        </a>
+        <a href="/subPlatinum">
+        <div class="package brilliant">
+          <div class="name">Platinum</div>
+          <div class="price"><i class="fa fa-rupee" style="font-size:18px;color:#e75e8d"></i> 1999</div>
+          <div class="trial">Available for 12 month</div>
+          <hr />
+          <ul>
+            <li>
+              <strong>Ads free </strong>
+              movies and shows 
+            </li>
+            <li>
+              <strong>4K (2160p)</strong>
+              Max video quality
+            </li>
+            <li>
+              <strong>Dolby 5.1</strong>
+              Max audio quality
+            </li>
+          </ul>
+        </div>
+        </a>
+      </div>
+      <div class="center">
+        <button class="button-24" id="rzp-button1" style="width:40%;">Pay <i class="fa fa-rupee" style="font-size:18px;"></i> 1999</button>
+      </div>
+      
+    </div>
+      <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+      <script>
+        var options = {
+            "key": "rzp_test_jMznWdL9PZWjxV", // Enter the Key ID generated from the Dashboard
+            "amount": "199900", 
+            "currency": "INR",
+            "name": "iMovie's & News",
+            "order_id": "{{payment.id}}", 
+            "handler": function (response){
+                window.location.href='http://127.0.0.1:8000/success?plan=platinum';
+            },
+            "notes": {
+                "address": "iMovie's & News"
+            },
+            "theme": {
+                "color": "#e75e8d"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.on('payment.failed', function (response){
+                alert(response.error.code);
+                alert(response.error.description);
+                alert(response.error.source);
+                alert(response.error.step);
+                alert(response.error.reason);
+                alert(response.error.metadata.order_id);
+                alert(response.error.metadata.payment_id);
+        });
+        document.getElementById('rzp-button1').onclick = function(e){
+            rzp1.open();
+            e.preventDefault();
+        }
+        </script>
+</body>
+</html>

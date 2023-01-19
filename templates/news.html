@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}News{% endblock title %}
+
+{% block body %}
+<script>
+  function handleClick(element) {
+    var newsUrl = element.getAttribute("data-newsUrl");
+
+    // center the window
+    var width = 700;
+    var height = 360;
+    var left = (screen.width/2)-(width/2);
+    var top = (screen.height/3)-(height/2);
+
+    // open the window
+    window.open(newsUrl, "Pop-Up Window", "height="+height+", width="+width+", top="+top+", left="+left);
+}
+</script>
+
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content">
+
+          <!-- ***** Featured Games Start ***** -->
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="featured-games header-text">
+                <div class="heading-section">
+                  <h4 style="color:#339DFF;"><em>Top</em> News</h4>
+                </div>
+                <div class="owl-features owl-carousel" >
+                {% for x in api.articles %}
+                  <div class="item" style="padding:5px;">
+                    <div class="thumb">
+                      <img src="{{x.urlToImage}}" alt="">
+                    </div>
+                    <h4>{{x.title}}</h4>
+                    <h4>{{x.publishedAt}}</h4>
+                    <p class="card-text">{{x.description}}</p>
+                    <br>
+                    <button class="btn btn-primary" data-newsUrl="{{ x.url }}" onclick="handleClick(this)">Read More</button>
+                    {% comment %} <a href="{{x.url}}" target="_blank" class="btn btn-primary">Read More</a> {% endcomment %}
+                  </div>
+                {%endfor%}
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="top-streamers">
+                <div class="heading-section">
+                  <h4 style="color:#339DFF;"><em>News</em> Categories</h4>
+                </div>
+                <ul>
+                  <li>
+                    <span>01</span>
+                    <img src="static/assets/images/avatar-01.jpg" alt="" style="max-width: 46px; border-radius: 50%; margin-right: 15px;">
+                    <h6> Business</h6>
+                    <div class="main-button">
+                      <a href="/newsCategory/business">View</a>
+                    </div>
+                  </li>
+                  <li>
+                    <span>02</span>
+                    <img src="static/assets/images/avatar-04.jpg" alt="" style="max-width: 46px; border-radius: 50%; margin-right: 15px;">
+                    <h6> Entertainment</h6>
+                    <div class="main-button">
+                      <a href="/newsCategory/entertainment">View</a>
+                    </div>
+                  </li>
+                  <li>
+                    <span>03</span>
+                    <img src="static/assets/images/avatar-03.jpg" alt="" style="max-width: 46px; border-radius: 50%; margin-right: 15px;">
+                    <h6> General</h6>
+                    <div class="main-button">
+                      <a href="/newsCategory/general">View</a>
+                    </div>
+                  </li>
+                  <li>
+                    <span>04</span>
+                    <img src="static/assets/images/avatar-02.jpg" alt="" style="max-width: 46px; border-radius: 50%; margin-right: 15px;">
+                    <h6> Sports</h6>
+                    <div class="main-button">
+                      <a href="/newsCategory/sports">View</a>
+                    </div>
+                  </li>
+                  <li>
+                    <span>05</span>
+                    <img src="static/assets/images/avatar-01.jpg" alt="" style="max-width: 46px; border-radius: 50%; margin-right: 15px;">
+                    <h6> Science</h6>
+                    <div class="main-button">
+                      <a href="/newsCategory/science">View</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Featured Games End ***** -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock body %}
